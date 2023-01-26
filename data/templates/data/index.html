@@ -1,0 +1,63 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'data/style.css' %}">
+    <title>Nari Comfort Wear</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="alert alert-dark" role="alert">
+    <div class="card">
+        <div class="card-body">
+            <h1>Nari Comfort Wear</h1>
+        </div>
+    </div>
+</div>
+<h3><a href="/admin"><span class="badge bg-secondary">Go to Admin Page</span></a>  {% for item in update %}<a href="/update"><span class="badge bg-secondary">Update Record</span></a> {% endfor %} <a href="/admin/data/uploadcsv/"><span class="badge bg-secondary">Upload New CSV File</span></a></h3>
+    <form method="GET" action=".">
+        <div class="container">
+        <div class="form-row">
+            <div class="form-group col-12">
+                <div class="input-group">
+                    <input class="form-control py-2 border-right-0 border" type="search" name="Barcode" placeholder="Barcode" />
+                </div>
+            </div>        
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">Search</button>
+    </div>
+    <div class="container">
+        {% for item in data %}
+            <div class="section">
+                <div class="separator display-mobile" style="margin-bottom:15px"></div>
+            <div class="frame">
+                <p class="frame-title">{{item.Item_Name}}</p>
+                <table style="width: 100%">
+                    <tr>
+                        <td valign="top" align="center">
+                            <img src="{{item.Image}}">
+                        </td>
+                        <td>
+                            <h3>MRP:{{item.MRP}} <br>Selling Price:: <br>Rate_A : {{item.Rate_A}} <br>Rate_B: {{item.Rate_B}} <br>Rate_B: {{item.Rate_B}}</h2>
+                            <div class="text-with-vertical-line"
+                            style="margin-left: 20px">
+                           
+                                <p>
+                                    Avilable Stock:: {{item.Available_Stock}}<br>
+                                    Barcode::{{item.Barcode}}
+                                </p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+          
+        {% endfor %}
+    </div>
+    </div>
+   </body>
+</html>

@@ -25,14 +25,13 @@ SECRET_KEY = 'django-insecure-tcau9^+#2+yv=5*e@412#hy1&ysvlm4&+tqtb8+u_ig(7hbki8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['jecnotice3-production.up.railway.app']
+ALLOWED_HOSTS = ['naricomfort.up.railway.app']
 CSRF_TRUSTED_ORIGINS = [
-    'https://jecnotice3-production.up.railway.app'
+    'https://naricomfort.up.railway.app'
 ]
 CORS_ORIGIN_WHITELIST = [
-    'https://jecnotice3-production.up.railway.app',
+    'https://naricomfort.up.railway.app',
 ]
-ALLOWED_HOSTS = []
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 15000
 
 # Application definition
